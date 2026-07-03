@@ -167,11 +167,89 @@ body {
 }
 
 .trusted {
-  padding: 28px 8%;
-  text-align: center;
+  padding: 34px 8%;
   background: var(--blue);
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.operations-strip {
+  padding: 28px 8%;
+  background: var(--blue);
+  color: white;
+  text-align: center;
   font-weight: 700;
+}
+
+.operations-strip p {
+  line-height: 1.55;
+}
+
+.trusted-copy {
+  max-width: 610px;
+}
+
+.trusted-copy > span {
+  display: block;
+  margin-bottom: 8px;
+  color: #9ecbff;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.trusted h2 {
+  margin-bottom: 8px;
+  font-size: clamp(24px, 2.5vw, 34px);
+  line-height: 1.15;
+}
+
+.trusted p {
+  color: #dbeafe;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.certification-logos {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.certification-logo {
+  width: 142px;
+  height: 142px;
+  padding: 13px;
+  background: white;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 14px 35px rgba(1, 22, 49, .28);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.certification-logo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(1, 22, 49, .38);
+}
+
+.certification-logo:focus-visible {
+  outline: 3px solid #9ecbff;
+  outline-offset: 4px;
+}
+
+.certification-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .section {
@@ -415,6 +493,15 @@ body {
   .hero-image img {
     height: 360px;
   }
+
+  .trusted {
+    align-items: flex-start;
+  }
+
+  .certification-logo {
+    width: 124px;
+    height: 124px;
+  }
 }
 
 @media (max-width: 680px) {
@@ -455,5 +542,23 @@ body {
 
   .hero-image img {
     height: 280px;
+  }
+
+  .trusted {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    text-align: center;
+  }
+
+  .certification-logos {
+    width: 100%;
+  }
+
+  .certification-logo {
+    width: min(38vw, 136px);
+    height: min(38vw, 136px);
   }
 }
